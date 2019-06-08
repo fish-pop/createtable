@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="fish" id="T100-20190607-1">
+        <createTable tableName="biz_data_store">
+            <column name="id" type="BIGINT(20) UNSIGNED" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"  />
+            </column>
+            <column name="account_id" type="BIGINT(20) UNSIGNED"> <constraints  nullable="false"  />  </column>
+            <column name="app_id" type="BIGINT(50) UNSIGNED"> <constraints  nullable="false"  />  </column>
+            <column name="name" type="VARCHAR(100)"> <constraints  nullable="false"  />  </column>
+            <column name="description" type="VARCHAR(200)"/>
+            <column name="type" type="VARCHAR(20)"> <constraints  nullable="false"  />  </column>
+            <column name="database_id" type="BIGINT(20)"> <constraints  nullable="false"  />  </column>
+            <column name="table_name" type="VARCHAR(20)"><constraints  nullable="false"  />  </column>
+            <column name="schema_conf_json" type="LONGTEXT"> <constraints  nullable="false"  />  </column>
+            <column name="reserved_day" type="INT(11)"/>
+            <column name="store_cof_json" type="TEXT"> <constraints  nullable="false"  />  </column>
+            <column name="status" type="INT(11)"> <constraints  nullable="false"  />  </column>
+            <column name="is_deleted" type="TINYINT(3) UNSIGNED"> <constraints  nullable="false"  />  </column>
+            <column name="modified_user_id" type="BIGINT(20)"> <constraints  nullable="false"  />  </column>
+            <column name="modified_time" type="DATETIME(6)"><constraints  nullable="false"  />  </column>
+            <column name="creation_user_id" type="BIGINT(20)"> <constraints  nullable="false"  />  </column>
+            <column name="creation_time" type="DATETIME(6)"><constraints  nullable="false"  />  </column>
+        </createTable>
+    </changeSet>
+   <!-- <changeSet id="T100-20190526-4" author="fish">
+        <loadData tableName="biz_data_store" file="db/liquibase/0.0.1-SNAPSHOT/elec_user.csv">
+            <column name="account_id" type="NUMERIC"/>
+            <column name="app_id" type="NUMERIC"/>
+            <column name="name" type="STRING"/>
+            <column name="description" type="STRING"/>
+            <column name="type" type="STRING"/>
+            <column name="database_id" type="NUMERIC"/>
+            <column name="table_name" type="STRING"/>
+            <column name="schema_conf_json" type="STRING"/>
+            <column name="reserved_day" type="NUMERIC"/>
+            <column name="store_cof_json" type="STRING"/>
+            <column name="status" type="STRING"/>
+            <column name="is_deleted" type="STRING"/>
+            <column name="modified_user_id" type="NUMERIC"/>
+            <column name="modified_time" type="DATE"/>
+            <column name="creation_user_id" type="NUMERIC"/>
+            <column name="creation_time" type="DATE"/>
+        </loadData>
+    </changeSet>-->
+
+    <changeSet author="fish" id="T100-20190607-2">
+        <createTable tableName="biz_data_base">
+            <column name="id" type="BIGINT(20) UNSIGNED" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"  />
+            </column>
+            <column name="account_id" type="BIGINT(20) UNSIGNED"> <constraints  nullable="false"  />  </column>
+            <column name="app_id" type="BIGINT(20) UNSIGNED"> <constraints  nullable="false"  />  </column>
+            <column name="name" type="VARCHAR(100)"> <constraints  nullable="false"  />  </column>
+            <column name="is_deleted" type="TINYINT(3) UNSIGNED"><constraints  nullable="false"  />  </column>
+            <column name="modified_user_id" type="BIGINT(20)"> <constraints  nullable="false"  />  </column>
+            <column name="modified_time" type="DATETIME(6)"> <constraints  nullable="false"  />  </column>
+            <column name="creation_user_id" type="BIGINT(20)"> <constraints  nullable="false"  />  </column>
+            <column name="creation_time" type="DATETIME(6)"> <constraints  nullable="false"  />  </column>
+        </createTable>
+    </changeSet>
+    <!--<changeSet id="T100-20190526-6" author="fish">
+        <loadData tableName="biz_data_base" file="db/liquibase/0.0.1-SNAPSHOT/elec_user.csv">
+            <column name="account_id" type="NUMERIC"/>
+            <column name="app_id" type="NUMERIC"/>
+            <column name="name" type="STRING"/>
+            <column name="is_deleted" type="STRING"/>
+            <column name="modified_user_id" type="NUMERIC"/>
+            <column name="modified_time" type="DATE"/>
+            <column name="creation_user_id" type="NUMERIC"/>
+            <column name="creation_time" type="DATE"/>
+        </loadData>
+    </changeSet>-->
+
+</databaseChangeLog>
